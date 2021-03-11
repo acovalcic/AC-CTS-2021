@@ -1,8 +1,9 @@
 package ro.ase.java.models;
 
-import ro.ase.java.interfaces.UserServiceA;
+import ro.ase.java.interfaces.UserService;
 
-public class Admin extends User implements UserServiceA {
+public class Admin extends User implements UserService {
+	
 	public String companyName;
 	
 	public Admin() {
@@ -24,7 +25,6 @@ public class Admin extends User implements UserServiceA {
 
 	@Override
 	public void authenticate(String user, String password) {
-		// TODO Auto-generated method stub
 		if(user.equals("admin") && password.equals("@dmin")) {
 			System.out.println("Welcome admin!");
 		} else {

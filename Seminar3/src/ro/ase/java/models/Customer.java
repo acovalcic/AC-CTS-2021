@@ -1,8 +1,8 @@
 package ro.ase.java.models;
 
-import ro.ase.java.interfaces.UserServiceA;
+import ro.ase.java.interfaces.UserService;
 
-public class Customer extends User implements UserServiceA, Cloneable {
+public class Customer extends User implements UserService, Cloneable {
 	
 	private String fullName;
 	
@@ -25,7 +25,6 @@ public class Customer extends User implements UserServiceA, Cloneable {
 
 	@Override
 	public void authenticate(String user, String password) {
-		// TODO Auto-generated method stub
 		if(user.equals("customer") && password.equals("p@ssw0rd")) {
 			System.out.println("Authenticated succesfully.");
 		} else {
@@ -35,7 +34,6 @@ public class Customer extends User implements UserServiceA, Cloneable {
 
 	@Override
 	public Customer clone() throws CloneNotSupportedException {
-		// TODO Auto-generated method stub
 		Customer copy = null;
 		copy = (Customer) super.clone();
 		copy.setUsername(this.getUsername());
@@ -43,6 +41,5 @@ public class Customer extends User implements UserServiceA, Cloneable {
 		copy.setFullName(this.fullName);
 		return copy;
 	}
-	
 	
 }
